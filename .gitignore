@@ -1,0 +1,9 @@
+# Ignore everything in this folder
+oci_config/*
+
+# EXCEPT the sample file
+!oci_config/config.example
+
+# Always ignore the real key and real config
+oci_config/config
+oci_config/*.pem

@@ -1,0 +1,7 @@
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaaxxx... (your user OCID)
+fingerprint=xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx:xx
+tenancy=ocid1.tenancy.oc1..aaaaaaaayyy... (your tenancy OCID)
+region=ap-singapore-1
+# IMPORTANT: This path is relative to the root of the Function container
+key_file=/function/oci_config/oci_key.pem
