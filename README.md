@@ -24,7 +24,7 @@ This Python function solves that by:
     Resource Principal Ready: Built to work with OCI Functions execution environment.
 
 📂 Project Structure
-Plaintext
+```
 
 .
 ├── func.py                # Main Python logic and ODA API call
@@ -34,7 +34,7 @@ Plaintext
 │   ├── config.example     # Template for OCI credentials
 │   └── oci_key.pem        # (Ignored by Git) Your private API key
 └── .gitignore             # Ensures secrets are never pushed to GitHub
-
+```
 🛠️ Setup Instructions
 1. Authentication
 
@@ -60,7 +60,7 @@ Invoke from OIC
 In your OIC Integration, use the OCI Functions Adapter or a standard REST Adapter to send a POST request to this function.
 
 Sample Payload:
-JSON
+```
 
 {
     "botId": "ocid1.odabot...",
@@ -75,7 +75,7 @@ JSON
     "modify": [],
     "delete": []
 }
-
+```
 ⚠️ Important Security Note
 
 The oci_config/ folder contains sensitive credentials. Never remove it from .gitignore.
@@ -88,7 +88,7 @@ Since your function is essentially a "Proxy," it takes the ODA payload and retur
 
 This is what you will send from OIC to your OCI Function. The ODA API allows you to perform three types of operations in a single call.
 JSON
-
+```
 {
   "botId": "ocid1.odabot.oc1.ap-singapore-1.aaaaaaaaxxx...",
   "entityId": "PizzaToppings",
@@ -113,12 +113,12 @@ JSON
     }
   ]
 }
-
+```
 2. Sample Success Response (From Function)
 
 When the OCI Function successfully signs and forwards the request, ODA returns a 200 OK or 202 Accepted along with a summary of the processed items.
 JSON
-
+```
 {
   "status": "success",
   "pushRequestId": "req-998877",
@@ -129,7 +129,7 @@ JSON
   },
   "details": "The dynamic entity values have been updated successfully."
 }
-
+```
 3. Sample Error Response
 
 If something goes wrong (e.g., the botId is incorrect or the OCI Signer fails), your try/except block will catch it and return a 500 error:
