@@ -19,7 +19,7 @@ signer = Signer(
     private_key_file_location=config["key_file"]
 )
 
-ODA_HOST = "https://oda-4a1c4d97c8b7416e90a8677ebeda76d4-da73696e.data.digitalassistant.oci.oraclecloud.com"
+ODA_HOST = "https://[XXXXX].data.digitalassistant.oci.oraclecloud.com"
 
 def handler(ctx, data: io.BytesIO = None):
     try:
